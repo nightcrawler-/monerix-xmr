@@ -3,11 +3,14 @@
 ## Using xmr-stak
 
 POOL Address:: xmr-eu2.nanopool.org:14444
-POOL Adfr other xmr-us-east1.nanopool.org:14444
+
+POOL Address other xmr-us-east1.nanopool.org:14444
+
 Wallet Address: 42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuDxSNXFCoH3h5GA5F8nUuh9a76xzt7sURb4wNgXVDn77qBvRBa
 
 
 wget https://github.com/fireice-uk/xmr-stak/releases/download/1.0.5-rx/xmr-stak-rx-linux-1.0.5-cpu.tar.xz
+
 tar -xf [the file]
 ./ run the app
 follow instructions - setup pool and wallet address.
