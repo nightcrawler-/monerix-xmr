@@ -44,5 +44,4 @@ sortPools=true
 
 ### Download, install and run
 
-bash <(curl -s https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp.sh)
-
+wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp.sh | bash
