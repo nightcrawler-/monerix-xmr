@@ -32,16 +32,22 @@ https://xmr.nanopool.org/account/42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuD
 ## nanominer
 
 wget https://github.com/nanopool/nanominer/releases/download/3.3.4/nanominer-linux-3.3.4.tar.gz
+
 tar xvfz [the file]
 
 then in config.ini, add the below
 
-[RandomX]
+```[RandomX]
 wallet = 42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuDxSNXFCoH3h5GA5F8nUuh9a76xzt7sURb4wNgXVDn77qBvRBa
 rigName = AZONE
 email = o.frederickn@gmail.com
-sortPools=true
+sortPools=true```
 
 ### Download, install and run
 
 wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp.sh | bash
+
+TODO
+- [ ] Add download and run script to start up (Maybe just run script?)
+- [ ] Use actual host identifiers - will involve a more detailed initial configuration: Default config file, plus append the host name somewhere, think echo "HOST" >> config.ini
+
