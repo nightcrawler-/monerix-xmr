@@ -48,8 +48,14 @@ sortPools=true
 ### Download, install and run - with one script.
 Use your own configuration in the script files - `warp.sh`
 
-The conservative version that uses one less core: `wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp.sh | bash`
-The x-mode version that takes all cores: `wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-unlimited.sh | bash`
+The conservative version that uses one less core: 
+
+`wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp.sh | bash`
+
+The x-mode version that takes all cores:
+
+`wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-unlimited.sh | bash`
+
 
 TODO
 - [ ] Add download and run script to start up (Maybe just run script?)
