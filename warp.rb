@@ -2,7 +2,7 @@
 require "json"
 require "shellwords" # Not very necessary
 
-max_vms = 10
+max_vms = 1
 
 # Definitions should come before invocations
 
@@ -26,8 +26,7 @@ end
 def create_vm(resource_group, prefix, index)
   name = prefix + "_" + index.to_s
 
-  puts "Running command: 
-  az vm create \
+  puts "Running command: az vm create \
   --resource-group #{resource_group} \
   --name #{name} \
   --image UbuntuLTS \
