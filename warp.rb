@@ -15,11 +15,10 @@ def create_resource_group(location, prefix, index)
   puts "Running command: az group create --name #{name} --location #{location}"
 
   # Run the command
-  # TODO: Uncommect to execute `az group create --name #{name} --location #{location}`
+  `az group create --name #{name} --location #{location}`
 
   # Create VM after resource group, easy peasy
-  create_vm(name, 'azure', index)
-
+  create_vm(name, "azure", index)
 end
 
 # prefix = azure default (use others for id)
@@ -34,22 +33,20 @@ def create_vm(resource_group, prefix, index)
   --generate-ssh-keys"
 
   # Run the command TODO: (uncomment)
-  # `az vm create \
-  # --resource-group #{resource_group} \
-  # --name #{name} \
-  # --image UbuntuLTS \
-  # --size Standard_F8s_v2 \
-  # --generate-ssh-keys`
+  `az vm create \
+  --resource-group #{resource_group} \
+  --name #{name} \
+  --image UbuntuLTS \
+  --size Standard_F8s_v2 \
+  --generate-ssh-keys`
 
   # Run script after
   run_warp(resource_group, name)
-
 end
 
 def run_warp(resource_group, vm_name)
-  puts 'Running warp script...'
-  #TODO: uncomment
-  # `az vm run-command invoke -g #{resource_group} -n #{vm_name} --command-id RunShellScript --scripts "wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-unlimited.sh | bash"`
+  puts "Running warp script..."
+  `az vm run-command invoke -g #{resource_group} -n #{vm_name} --command-id RunShellScript --scripts "wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-unlimited.sh | bash"`
 end
 
 (1..max_vms).each do |index|
