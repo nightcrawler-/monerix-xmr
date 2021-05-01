@@ -1,7 +1,11 @@
-# Load locations JSON file (should be in the root directory with this script)
+# Creates Resource Group, an associated VM and runs the script. You need to change the values for
+# The regions file, max_vms and the range (line 55, or therebouts) to set the number of VMs to create.
+# locations-lean file comtains regions that have successfully created the 8Core VMs for. Locations pending
+# Needs cleanup, 5 of those locations don't support deploymemts, at least.
+
 require "json"
 
-max_vms = 12
+max_vms = 10
 
 # Definitions should come before invocations
 
@@ -17,12 +21,12 @@ def create_resource_group(location, prefix, index)
   result = `az group create --name #{name} --location #{location}`
   puts "Completed: " + result
   # Create VM after resource group, easy peasy
-  create_vm(name, "azure", index)
+  create_vm(name, "azure-z", index)
 end
 
 # prefix = azure default (use others for id)
 def create_vm(resource_group, prefix, index)
-  name = prefix + "_" + index.to_s
+  name = prefix + "" + index.to_s
 
   puts "Running command: az vm create \
   --resource-group #{resource_group} \
@@ -53,10 +57,10 @@ end
 
 (1..max_vms).each do |index|
   # Edit locations.json with all valid locations only
-  locations_hash = JSON.parse(File.read("data/locations-pending.json"))
+  locations_hash = JSON.parse(File.read("data/locations-lean.json"))
 
   # -1 because 0 based, don't skip the first
-  create_resource_group(locations_hash[index - 1]["name"], "rg_azure_x", index)
+  create_resource_group(locations_hash[index - 1]["name"], "azure_z", index)
 end
 
 # Scraps
