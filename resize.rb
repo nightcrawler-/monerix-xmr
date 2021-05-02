@@ -3,7 +3,7 @@
 
 require "json"
 
-vms = JSON.parse(File.read("data/vms_onex.json"))
+vms = JSON.parse(File.read("data/vms_x.json"))
 
 vms.each do | vm |
 	group =  vm["resourceGroup"]
