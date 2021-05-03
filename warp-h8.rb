@@ -6,7 +6,7 @@
 require "json"
 
 # Sun 1344: 4 (1-4)
-max_vms = 4
+max_vms = 5
 
 # Definitions should come before invocations
 
@@ -22,7 +22,7 @@ def create_resource_group(location, prefix, index)
   result = `az group create --name #{name} --location #{location}`
   puts "Completed: " + result
   # Create VM after resource group, easy peasy
-  create_vm(name, "azure-xh", index)
+  create_vm(name, "azure-zh", index)
 end
 
 # prefix = azure default (use others for id)
@@ -58,10 +58,10 @@ end
 
 (1..max_vms).each do |index|
   # Edit locations.json with all valid locations only
-  locations_hash = JSON.parse(File.read("data/locations-h8.json"))
+  locations_hash = JSON.parse(File.read("data/locations-h8-z.json"))
 
   # -1 because 0 based, don't skip the first
-  create_resource_group(locations_hash[index - 1]["name"], "azure_xh", index)
+  create_resource_group(locations_hash[index - 1]["name"], "azure_zh", index)
 end
 
 # Scraps
@@ -73,3 +73,4 @@ end
 # Find location of an executable, linux:
 # get PID - htop, other tool
 # pwdx <pid>
+
