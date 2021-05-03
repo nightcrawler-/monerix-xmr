@@ -41,7 +41,7 @@ then in config.ini, add the below
 [RandomX]
 wallet = 42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuDxSNXFCoH3h5GA5F8nUuh9a76xzt7sURb4wNgXVDn77qBvRBa
 rigName = AZONE
-email = o.frederickn@gmail.com
+email = [kenye unataka]
 sortPools=true
 ```
 
