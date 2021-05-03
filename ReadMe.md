@@ -56,6 +56,10 @@ The x-mode version that takes all cores:
 
 `wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-unlimited.sh | bash`
 
+The super conservertive version that disables 2 cores:
+
+`wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-mini.sh | bash`
+
 
 TODO
 - [ ] Add download and run script to start up (Maybe just run script?)
