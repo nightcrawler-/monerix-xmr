@@ -31,6 +31,8 @@ https://xmr.nanopool.org/account/42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuD
 
 ## nanominer
 
+Preferred:
+
 wget https://github.com/nanopool/nanominer/releases/download/3.3.4/nanominer-linux-3.3.4.tar.gz
 
 tar xvfz [the file]
