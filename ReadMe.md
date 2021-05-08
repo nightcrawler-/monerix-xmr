@@ -53,6 +53,10 @@ Only uses about half of the available cores? But alot of memory, at least on the
 
 ### To run in the background:
 
+>> ctr + Z
+>> bg
+
+
 [config file changes:]
 "daemon_mode" = true
 "output_file" = "/tmp/xmr-stak.log"
