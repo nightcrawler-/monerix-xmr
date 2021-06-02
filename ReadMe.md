@@ -34,6 +34,11 @@ The super conservertive version that disables 2 cores:
 `wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-mini.sh | bash`
 
 
+### XMRRIg with MoneroOcean
+
+`curl -s -L https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/monero_ocean.sh | bash -s 42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuDxSNXFCoH3h5GA5F8nUuh9a76xzt7sURb4wNgXVDn77qBvRBa`
+
+
 ## Using xmr-stak
 
 POOL Address:: xmr-eu2.nanopool.org:14444
