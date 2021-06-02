@@ -33,6 +33,10 @@ The super conservertive version that disables 2 cores:
 
 `wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-mini.sh | bash`
 
+The x-mode, with the most recent commit:
+
+`wget -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/warp-unlimited.sh | bash`
+
 
 ### XMRRIg with MoneroOcean
 
