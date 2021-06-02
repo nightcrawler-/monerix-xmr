@@ -38,6 +38,12 @@ The super conservertive version that disables 2 cores:
 
 `curl -s -L https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/monero_ocean.sh | bash -s 42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuDxSNXFCoH3h5GA5F8nUuh9a76xzt7sURb4wNgXVDn77qBvRBa`
 
+NOTE: If you are using shared VPS it is recommended to avoid 100% CPU usage produced by the miner or you will be banned
+HINT: Please execute these commands and reboot your VPS after that to limit miner to 75% percent CPU usage:
+
+`sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config.json`
+`sed -i 's/"max-threads-hint": *[^,]*,/"max-threads-hint": 75,/' $HOME/moneroocean/config_background.json`
+
 
 ## Using xmr-stak
 
