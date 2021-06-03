@@ -1,11 +1,24 @@
 #!/bin/bash
-wget https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/nanominer-linux-3.3.4.tar.xz>dev/null
-tar -xf nanominer-linux-3.3.4.tar.xz>dev/null
-cd nanominer-linux-3.3.4
+
+VERSION=1.0.1
+
+echo "Setup script version $VERSION."
+echo "Downloading nanominer..."
+
+# wget https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/nanominer-linux-3.3.4.tar.xz>dev/null
+# tar -xf nanominer-linux-3.3.4.tar.xz>dev/null
+# cd nanominer-linux-3.3.4
+
+echo "Download and extraction completed successfully."
 
 # X-Mode - No limit on cpu threads
+# Touch so that rm daent fail, hackity ah!
 touch config.ini
 rm config.ini
+
+# Read minus-cores input param, if empty, use 0
+# Command line args - first param is number of cores less to use
+RESTRICT=$1
 
 echo "Configuring miner..."
 
@@ -15,11 +28,26 @@ echo "rigName = " `cat /proc/sys/kernel/hostname` >> config.ini
 echo "email = yokohama@mailinator.com" >> config.ini
 echo "sortPools = true" >> config.ini 
 
+# Check for core restrictions
+
+if [ -z $RESTRICT ]; then
+  echo "No core usage restriction specified, using all cores."
+else
+  echo "CPU Restricted, using one core less, ~83% for an 8 Core CPU"
+
+  echo "cpuThreads = " `grep -c ^processor /proc/cpuinfo | awk '{print $0-1}'` >> config.ini
+fi
+
 # Some refinements needed:
 # Always check nanominer is not running before starting
 # Enable run on startup - with a service, in the background
 
 # Start as a background process
-nohup ./nanominer &
+# nohup ./nanominer &>dev/null
+
+echo ""
+echo "Current configuration:"
+
+cat config.ini
 
 echo "Setup complete, mining in progress"
