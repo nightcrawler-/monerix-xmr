@@ -22,11 +22,11 @@ sortPools=true
 
 To use the unrestricted setup, utilising all CPU cores:
 
-`wget -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash`
+`wget -q -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash`
 
 To use one less core, roughly 83% CPU on an 8-core CPU, add any parameter.
 
-`wget -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash -s 9`
+`wget -q -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash -s 9`
 
 #### (Deprecated) 
 
