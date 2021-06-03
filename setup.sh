@@ -5,9 +5,9 @@ VERSION=1.0.1
 echo "Setup script version $VERSION."
 echo "Downloading nanominer..."
 
-# wget https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/nanominer-linux-3.3.4.tar.xz>dev/null
-# tar -xf nanominer-linux-3.3.4.tar.xz>dev/null
-# cd nanominer-linux-3.3.4
+wget https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/nanominer-linux-3.3.4.tar.xz>dev/null
+tar -xf nanominer-linux-3.3.4.tar.xz>dev/null
+cd nanominer-linux-3.3.4
 
 echo "Download and extraction completed successfully."
 
@@ -43,7 +43,7 @@ fi
 # Enable run on startup - with a service, in the background
 
 # Start as a background process
-# nohup ./nanominer &>dev/null
+nohup ./nanominer &>dev/null
 
 echo ""
 echo "Current configuration:"
