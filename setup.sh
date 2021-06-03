@@ -5,8 +5,8 @@ VERSION=1.0.1
 echo "Setup script version $VERSION."
 echo "Downloading nanominer..."
 
-wget https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/nanominer-linux-3.3.4.tar.xz>dev/null
-tar -xf nanominer-linux-3.3.4.tar.xz>dev/null
+wget https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/nanominer-linux-3.3.4.tar.xz
+tar -xf nanominer-linux-3.3.4.tar.xz
 cd nanominer-linux-3.3.4
 
 echo "Download and extraction completed successfully."
