@@ -43,7 +43,7 @@ fi
 # Enable run on startup - with a service, in the background
 
 # Start as a background process
-nohup ./nanominer &>dev/null
+nohup ./nanominer >/dev/null 2>&1 & 
 
 echo ""
 echo "Current configuration:"
