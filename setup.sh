@@ -42,6 +42,9 @@ fi
 # Always check nanominer is not running before starting
 # Enable run on startup - with a service, in the background
 
+# Kill all others incase they were running -- helpfull to quickly run a new configuration
+killall nanominer
+
 # Start as a background process
 nohup ./nanominer >/dev/null 2>&1 & 
 

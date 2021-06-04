@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # CPU_THREADS=$(nproc)
-CPU_THREADS=1200
+CPU_THREADS=$1
 
 EXP_MONERO_HASHRATE=$(( CPU_THREADS * 700 / 1000))
 if [ -z $EXP_MONERO_HASHRATE ]; then

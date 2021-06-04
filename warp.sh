@@ -25,3 +25,5 @@ echo "sortPools = true" >> config.ini
 echo "cpuThreads = " `grep -c ^processor /proc/cpuinfo | awk '{print $0-1}'` >> config.ini
 
 nohup ./nanominer &
+
+# id, signup date, active date, depoly start
