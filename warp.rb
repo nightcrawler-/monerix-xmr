@@ -5,7 +5,7 @@
 
 require "json"
 
-max_vms = 10
+max_vms = 9
 
 # Definitions should come before invocations
 
@@ -51,13 +51,13 @@ end
 def run_warp(resource_group, vm_name)
   puts "Running warp script..."
 
-  result = `az vm run-command invoke -g #{resource_group} -n #{vm_name} --command-id RunShellScript --scripts "wget -O - https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/warp-unlimited.sh | bash"`
+  result = `az vm run-command invoke -g #{resource_group} -n #{vm_name} --command-id RunShellScript --scripts "wget -q -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash -s 9"`
   puts "Completed All: " + result 
 end
 
 (1..max_vms).each do |index|
   # Edit locations.json with all valid locations only
-  locations_hash = JSON.parse(File.read("data/locations-lean.json"))
+  locations_hash = JSON.parse(File.read("data/locations-h8.json"))
 
   # -1 because 0 based, don't skip the first
   create_resource_group(locations_hash[index - 1]["name"], "azure_z", index)
