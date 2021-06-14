@@ -54,3 +54,5 @@ echo "Current configuration:"
 cat config.ini
 
 echo "Setup complete, mining in progress"
+
+# Think about using CPU limit instead od core count? Avoid flatline high cpu usage? Can this fly below the miner sentries?
