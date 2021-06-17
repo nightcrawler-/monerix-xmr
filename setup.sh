@@ -35,7 +35,10 @@ if [ -z $RESTRICT ]; then
 else
   echo "CPU Restricted, using one core less, ~83% for an 8 Core CPU"
 
-  echo "cpuThreads = " `grep -c ^processor /proc/cpuinfo | awk '{print $0-1}'` >> config.ini
+ # echo "cpuThreads = " `grep -c ^processor /proc/cpuinfo | awk '{print $0-1}'` >> config.ini
+ # temporary, use half capacity
+ echo "cpuThreads = 4" >> config.ini 
+
 fi
 
 # Some refinements needed:
