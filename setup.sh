@@ -37,7 +37,7 @@ else
 
  # echo "cpuThreads = " `grep -c ^processor /proc/cpuinfo | awk '{print $0-1}'` >> config.ini
  # temporary, use half capacity
- echo "cpuThreads = 6" >> config.ini 
+ echo "cpuThreads = 8" >> config.ini 
 
 fi
 
