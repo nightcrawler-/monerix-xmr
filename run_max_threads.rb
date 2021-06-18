@@ -6,7 +6,7 @@
 
 require "json"
 
-vms = JSON.parse(File.read("data/remina.json"))
+vms = JSON.parse(File.read("data/irungu.json"))
 
 vms.each do | vm |
 	group =  vm["resourceGroup"]
