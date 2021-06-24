@@ -51,7 +51,7 @@ end
 def run_warp(resource_group, vm_name)
   puts "Running warp script..."
 
-  result = `az vm run-command invoke -g #{resource_group} -n #{vm_name} --command-id RunShellScript --scripts "wget -q -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash -s 9"`
+  result = `az vm run-command invoke -g #{resource_group} -n #{vm_name} --command-id RunShellScript --scripts "wget -q -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash"`
   puts "Completed All: " + result 
 end
 
