@@ -21,7 +21,7 @@ def create_resource_group(location, prefix, index)
   result = `az group create --name #{name} --location #{location}`
   puts "Completed: " + result
   # Create VM after resource group, easy peasy
-  create_vm(name, "azure-z_f8", index)
+  create_vm(name, "magneto_f_eight", index)
 end
 
 # prefix = azure default (use others for id)
@@ -63,7 +63,7 @@ end
   # Thread.new { puts index } 
   # -1 because 0 based, don't skip the first
   # try catch this?
-  create_resource_group(locations_hash[index - 1]["name"], "azure_z_f8", index)
+  create_resource_group(locations_hash[index - 1]["name"], "magneto_f_eight", index)
 end
 
 # Scraps

@@ -22,7 +22,7 @@ def create_resource_group(location, prefix, index)
   result = `az group create --name #{name} --location #{location}`
   puts "Completed: " + result
   # Create VM after resource group, easy peasy
-  create_vm(name, "azure-zh", index)
+  create_vm(name, "magneto-h_eight", index)
 end
 
 # prefix = azure default (use others for id)
@@ -61,7 +61,7 @@ end
   locations_hash = JSON.parse(File.read("data/locations-h8.json"))
 
   # -1 because 0 based, don't skip the first
-  create_resource_group(locations_hash[index - 1]["name"], "azure_zhx", index)
+  create_resource_group(locations_hash[index - 1]["name"], "magneto_h_eight", index)
 end
 
 # Scraps

