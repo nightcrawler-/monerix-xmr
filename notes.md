@@ -16,3 +16,6 @@
 
 Extra:
 In order to keep things organized and cleaner, a Github Action should package all relevant files and create a release for each published tag.
+
+Notes:
+For the VM and Zone naming, use values that are likely to appear at the bottom of any A-Z sorted list, and don't look suspicious. :)
