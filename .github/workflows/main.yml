@@ -7,7 +7,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      ` uses: actions/checkout@master
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
@@ -15,8 +15,8 @@ jobs:
           filename: 'release.tar'
           exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: Upload Release
-      - uses: actions/checkout@v2
-      - uses: ncipollo/release-action@v1
+        uses: actions/checkout@v2
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "release.tar.gz,foo/*.txt"
           bodyFile: "body.md"
