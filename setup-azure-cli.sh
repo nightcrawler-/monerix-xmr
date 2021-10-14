@@ -28,7 +28,7 @@ echo "Downloading data files.."
 wget -q https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/data/locations-h8.json
 
 # F8 Regions file
-wget -q https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/data/locations-h8.json
+wget -q https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/data/locations-f8.json
 
 # Create a `data` dir and move all json files in current dir to it
 mkdir data
