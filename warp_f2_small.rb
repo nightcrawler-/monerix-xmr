@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 # Creates Resource Group, an associated VM and runs the monerix setup script. You need to change the values for
 # The regions file, max_vms and the range (line 55, or therebouts) to set the number of VMs to create.
 # locations-lean file comtains regions that have successfully created the 8Core VMs for. Locations pending
 # Needs cleanup, 5 of those locations don't support deploymemts, at least.
 
-require "json"
+require 'json'
 
 max_vms = 30
 
 # Definitions should come before invocations
 
 def create_resource_group(location, prefix, index)
-  name = prefix + "_" + index.to_s
+  name = "#{prefix}_#{index}"
   puts "resource group name: #{name}"
   puts "location: #{location}"
 
@@ -19,14 +21,14 @@ def create_resource_group(location, prefix, index)
 
   # Run the command
   result = `az group create --name #{name} --location #{location}`
-  puts "Completed: " + result
+  puts "Completed: #{result}"
   # Create VM after resource group, easy peasy
-  create_vm(name, "azure-z_f2", index)
+  create_vm(name, 'azure-z_f2', index)
 end
 
 # prefix = azure default (use others for id)
 def create_vm(resource_group, prefix, index)
-  name = prefix + "" + index.to_s
+  name = "#{prefix}#{index}"
 
   puts "Running command: az vm create \
   --resource-group #{resource_group} \
@@ -43,26 +45,26 @@ def create_vm(resource_group, prefix, index)
   --size Standard_F2s_v2 \
   --generate-ssh-keys`
 
-  puts "Completed: " + result
+  puts "Completed: #{result}"
   # Run script after
   run_warp(resource_group, name)
 end
 
 def run_warp(resource_group, vm_name)
-  puts "Running warp script..."
+  puts 'Running warp script...'
 
   result = `az vm run-command invoke -g #{resource_group} -n #{vm_name} --command-id RunShellScript --scripts "wget -q -O - https://raw.githubusercontent.com/nightcrawler-/monerix-xmr/master/setup.sh | bash"`
-  puts "Completed All: " + result 
+  puts "Completed All: #{result}"
 end
 
 (1..max_vms).each do |index|
   # Edit locations.json with all valid locations only
-  locations_hash = JSON.parse(File.read("data/locations-all.json"))
+  locations_hash = JSON.parse(File.read('data/locations-all.json'))
 
-  puts "Starting..."
+  puts 'Starting...'
   # -1 because 0 based, don't skip the first
   # try catch this?
-  create_resource_group(locations_hash[index - 1]["name"], "azure_standard_f2", index)
+  create_resource_group(locations_hash[index - 1]['name'], 'azure_standard_f2', index)
 end
 
 # Scraps
