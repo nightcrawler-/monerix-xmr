@@ -24,3 +24,8 @@ The packing/unpacking can be skipped as only a total of only 4 files are needed.
 
 Thoughts::
 Explore device tracking by the cloud vendors, possibly use a different setup for signup/subscription. Cookies, https headers, user agents? 
+
+### Alt. Creation strategy
+
+1. Use automated script above that pauses every x-hours after one VM creation
+2. Write a script that will take in the region and machine type as parameters for creation and deployment of a single istance
