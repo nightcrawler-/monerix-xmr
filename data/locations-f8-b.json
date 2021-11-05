@@ -1,0 +1,65 @@
+[
+    {
+        "name": "centralus"
+    },
+    {
+        "name": "eastasia"
+    },
+    {
+        "name": "westus2"
+    },
+    {
+        "name": "westcentralus"
+    },
+    {
+        "name": "japanwest"
+    },
+    {
+        "name": "brazilsouth"
+    },
+    {
+        "name": "australiasoutheast"
+    },
+    {
+        "name": "southindia"
+    },
+    {
+        "name": "centralindia"
+    },
+    {
+        "name": "canadacentral"
+    },
+    {
+        "name": "canadaeast"
+    },
+    {
+        "name": "ukwest"
+    },
+    {
+        "name": "koreacentral"
+    },
+    {
+        "name": "koreasouth"
+    },
+    {
+        "name": "francecentral"
+    },
+    {
+        "name": "southafricanorth"
+    },
+    {
+        "name": "uaenorth"
+    },
+    {
+        "name": "australiacentral"
+    },
+    {
+        "name": "switzerlandnorth"
+    },
+    {
+        "name": "germanywestcentral"
+    },
+    {
+        "name": "norwayeast"
+    }
+]

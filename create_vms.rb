@@ -72,5 +72,6 @@ end
 
 JSON.parse(File.read(ARGV[0])).each_with_index do |location, index|
   puts "Creating VM: #{location["name"]}: #{("#{`hostname`}".gsub! "\n", "") + index.to_s}"
+  create_resource_group(location["name"], ("#{`hostname`}".gsub! "\n", ""), index)
 end
 # create_resource_group(location["name"], ("#{`hostname`}".gsub! "\n", ""), index)
