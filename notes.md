@@ -29,3 +29,6 @@ Explore device tracking by the cloud vendors, possibly use a different setup for
 
 1. Use automated script above that pauses every x-hours after one VM creation
 2. Write a script that will take in the region and machine type as parameters for creation and deployment of a single istance
+
+`az vm list-skus --location WestEurope --output table`
+`az vm list-skus --location northcentralus --resource-type virtualmachines --output table | grep H`
