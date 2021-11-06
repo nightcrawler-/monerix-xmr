@@ -19,3 +19,16 @@ In order to keep things organized and cleaner, a Github Action should package al
 
 Notes:
 For the VM and Zone naming, use values that are likely to appear at the bottom of any A-Z sorted list, and don't look suspicious. :)
+
+The packing/unpacking can be skipped as only a total of only 4 files are needed.
+
+Thoughts::
+Explore device tracking by the cloud vendors, possibly use a different setup for signup/subscription. Cookies, https headers, user agents? 
+
+### Alt. Creation strategy
+
+1. Use automated script above that pauses every x-hours after one VM creation
+2. Write a script that will take in the region and machine type as parameters for creation and deployment of a single istance
+
+`az vm list-skus --location WestEurope --output table`
+`az vm list-skus --location northcentralus --resource-type virtualmachines --output table | grep H`
